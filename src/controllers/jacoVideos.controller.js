@@ -2,7 +2,11 @@ const JacoVideos = require("../models/jacoVideos.model");
 const VideoSpeakerMapping = require("../models/videoSpeakerMapping.model");
 
 exports.listVideos = (req, res) => {
-  JacoVideos.getAllVideos((err, data) => {
+  const queryParams = {
+    pageNo: parseInt(req.query.pageNo),
+    limit: parseInt(req.query.limit),
+  };
+  JacoVideos.getAllVideos(queryParams, (err, data) => {
     if (err) {
       res.status(500).send({
         status: "error",
