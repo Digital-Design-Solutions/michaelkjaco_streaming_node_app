@@ -71,21 +71,27 @@ class JacoVideos {
     );
   }
 
-  static getAllVideos(cb) {
-    cb(null, videoList);
-    return;
-    // db.query(getAllVideosQuery, (err, res) => {
-    //   if (err) {
-    //     logger.error(err.message);
-    //     cb(err, null);
-    //     return;
-    //   }
-    //   if (res.length) {
-    //     cb(null, res);
-    //     return;
-    //   }
-    //   cb({ kind: "not_found" }, null);
-    // });
+  static getAllVideos(queryParams, cb) {
+    // cb(null, videoList);
+    // return;
+    const offset = queryParams.limit * queryParams.pageNo - queryParams.limit;
+    db.query(getAllVideosQuery, [queryParams.limit, offset], (err, res) => {
+      if (err) {
+        logger.error(err.message);
+        cb(err, null);
+        return;
+      }
+      if (res.length) {
+        const response = {
+          top3: res.slice(0, 3),
+          iwc: res.slice(2, 8),
+          allVideos: res,
+        };
+        cb(null, response);
+        return;
+      }
+      cb({ kind: "not_found" }, null);
+    });
   }
 
   //   static getUserRoleMappingByUserId(user_id, cb) {

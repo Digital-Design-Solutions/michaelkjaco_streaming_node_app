@@ -140,7 +140,8 @@ JOIN
 JOIN
     video_speaker_mapping vsm ON v.video_id = vsm.video_id
 JOIN
-    speakers s ON vsm.speaker_id = s.speaker_id;
+    speakers s ON vsm.speaker_id = s.speaker_id
+LIMIT ? OFFSET ?;
 `;
 
 const getAllCategories = `SELECT * FROM categories`;
