@@ -7,3 +7,29 @@
 {"level":"error","message":"connect ETIMEDOUT"}
 {"level":"error","message":"connect ETIMEDOUT"}
 {"level":"error","message":"connect ETIMEDOUT"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '10 LIMIT 0 OFFSET ?' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '10 LIMIT 0 OFFSET ?' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"Undeclared variable: NaN"}

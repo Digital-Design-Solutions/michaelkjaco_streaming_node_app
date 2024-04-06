@@ -2,6 +2,7 @@ const db = require("../config/db.config");
 const {
   addNewVideo: addNewVideoQuery,
   getAllVideos: getAllVideosQuery,
+  getVideosByCollectionName: getVideosByCollectionNameQuery,
 } = require("../database/queries");
 const { videoList } = require("../mockData/videos");
 const { logger } = require("../utils/logger");
@@ -71,11 +72,8 @@ class JacoVideos {
     );
   }
 
-  static getAllVideos(queryParams, cb) {
-    // cb(null, videoList);
-    // return;
-    const offset = queryParams.limit * queryParams.pageNo - queryParams.limit;
-    db.query(getAllVideosQuery, [queryParams.limit, offset], (err, res) => {
+  static fetchGalleryAPI(cb) {
+    db.query(getAllVideosQuery, [12, 0], (err, res) => {
       if (err) {
         logger.error(err.message);
         cb(err, null);
@@ -88,6 +86,44 @@ class JacoVideos {
           allVideos: res,
         };
         cb(null, response);
+        return;
+      }
+      cb({ kind: "not_found" }, null);
+    });
+  }
+
+  static getVideosByCollectionName(queryParams, cb) {
+    const offset = queryParams.limit * queryParams.pageNo - queryParams.limit;
+    db.query(
+      getVideosByCollectionNameQuery,
+      [queryParams.collectionName, queryParams.limit, offset],
+      (err, res) => {
+        if (err) {
+          logger.error(err.message);
+          cb(err, null);
+          return;
+        }
+        if (res.length) {
+          cb(null, res);
+          return;
+        }
+        cb({ kind: "not_found" }, null);
+      }
+    );
+  }
+
+  static getAllVideos(queryParams, cb) {
+    // cb(null, videoList);
+    // return;
+    const offset = queryParams.limit * queryParams.pageNo - queryParams.limit;
+    db.query(getAllVideosQuery, [queryParams.limit, offset], (err, res) => {
+      if (err) {
+        logger.error(err.message);
+        cb(err, null);
+        return;
+      }
+      if (res.length) {
+        cb(null, res);
         return;
       }
       cb({ kind: "not_found" }, null);

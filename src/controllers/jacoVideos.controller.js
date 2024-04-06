@@ -1,6 +1,44 @@
 const JacoVideos = require("../models/jacoVideos.model");
 const VideoSpeakerMapping = require("../models/videoSpeakerMapping.model");
 
+exports.fetchGalleryVideos = (req, res) => {
+  JacoVideos.fetchGalleryAPI((err, data) => {
+    if (err) {
+      res.status(500).send({
+        status: "error",
+        message: err.message,
+      });
+    } else {
+      res.status(201).send({
+        status: "success",
+        data,
+      });
+    }
+  });
+};
+
+exports.getVideosByCollectionName = (req, res) => {
+  const queryParams = {
+    pageNo: parseInt(req.body.pageNo),
+    limit: parseInt(req.body.limit),
+    collectionName: req.body.collectionName,
+  };
+  console.log("queryParams", queryParams);
+  JacoVideos.getVideosByCollectionName(queryParams, (err, data) => {
+    if (err) {
+      res.status(500).send({
+        status: "error",
+        message: err.message,
+      });
+    } else {
+      res.status(201).send({
+        status: "success",
+        data,
+      });
+    }
+  });
+};
+
 exports.listVideos = (req, res) => {
   const queryParams = {
     pageNo: parseInt(req.query.pageNo),
