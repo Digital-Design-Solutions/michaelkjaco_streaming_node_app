@@ -82,7 +82,12 @@ class JacoVideos {
         return;
       }
       if (res.length) {
-        cb(null, res);
+        const response = {
+          top3: res.slice(0, 3),
+          iwc: res.slice(2, 8),
+          allVideos: res,
+        };
+        cb(null, response);
         return;
       }
       cb({ kind: "not_found" }, null);
