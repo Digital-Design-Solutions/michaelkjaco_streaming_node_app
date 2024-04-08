@@ -216,6 +216,42 @@ JOIN
 where v.category_id = ? LIMIT ?;
 `;
 
+const searchVideos = `
+SELECT 
+    v.video_id,
+    v.new_title,
+    v.synopsis,
+    v.tags,
+    v.release_date,
+	v.s3_video_id,
+    v.views,
+    v.cover_image,
+    v.duration,
+    v.availability,
+    v.object_url,
+    v.entity_tags,
+    v.is_active,
+    v.is_deleted,
+    v.created_at,
+    v.updated_at,
+    c.collection_name,
+    v.category_id,
+    cat.category_name,
+    s.speaker_id,
+    s.speaker_name
+FROM 
+    videos v
+JOIN 
+    collections c ON v.collection_id = c.collection_id
+JOIN 
+    categories cat ON v.category_id = cat.category_id
+JOIN
+    video_speaker_mapping vsm ON v.video_id = vsm.video_id
+JOIN
+    speakers s ON vsm.speaker_id = s.speaker_id
+WHERE s.speaker_name LIKE '%' ? '%' OR v.new_title LIKE '%' ? '%';
+`;
+
 const getAllCategories = `SELECT * FROM categories`;
 const getAllSpeakers = `SELECT * FROM speakers`;
 
@@ -237,4 +273,5 @@ module.exports = {
   getAllSpeakers,
   getVideosByCollectionName,
   getVideoByCollectionId,
+  searchVideos,
 };

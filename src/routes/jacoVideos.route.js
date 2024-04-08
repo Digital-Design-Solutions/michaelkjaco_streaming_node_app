@@ -11,5 +11,8 @@ router
   .post(asyncHandler(jacoVideosController.getVideosByCollectionName));
 router.route("/listVideos").get(asyncHandler(jacoVideosController.listVideos));
 router.route("/addVideos").post(asyncHandler(jacoVideosController.addVideos));
+router
+  .route("/searchVideos")
+  .get(asyncHandler(jacoVideosController.searchVideos));
 
 module.exports = router;

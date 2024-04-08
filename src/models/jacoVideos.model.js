@@ -4,6 +4,7 @@ const {
   getAllVideos: getAllVideosQuery,
   getVideosByCollectionName: getVideosByCollectionNameQuery,
   getVideoByCollectionId: getVideoByCollectionIdQuery,
+  searchVideos: searchVideosQuery,
 } = require("../database/queries");
 const { videoList } = require("../mockData/videos");
 const { logger } = require("../utils/logger");
@@ -162,6 +163,21 @@ class JacoVideos {
     });
   }
 
+  static searchVideos(searchQuery, cb) {
+    db.query(searchVideosQuery, [searchQuery, searchQuery], (err, res) => {
+      if (err) {
+        console.log(err);
+        logger.error(err.message);
+        cb(err, null);
+        return;
+      }
+      if (res.length) {
+        cb(null, res);
+        return;
+      }
+      cb({ kind: "not_found" }, null);
+    });
+  }
   //   static getUserRoleMappingByUserId(user_id, cb) {
   //     db.query(getUserRoleMappingByUserIdQuery, user_id, (err, res) => {
   //       if (err) {

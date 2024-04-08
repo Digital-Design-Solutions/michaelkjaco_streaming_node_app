@@ -95,3 +95,19 @@ exports.addVideos = (payload, cb) => {
     }
   });
 };
+
+exports.searchVideos = (req, res) => {
+  JacoVideos.searchVideos(req.query.searchQuery, (err, data) => {
+    if (err) {
+      res.status(500).send({
+        status: "error",
+        message: err.message,
+      });
+    } else {
+      res.status(201).send({
+        status: "success",
+        data,
+      });
+    }
+  });
+};
