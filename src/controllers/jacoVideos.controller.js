@@ -9,9 +9,26 @@ exports.fetchGalleryVideos = (req, res) => {
         message: err.message,
       });
     } else {
-      res.status(201).send({
-        status: "success",
-        data,
+      JacoVideos.fetchIWCHelpVideo((error, responseData) => {
+        if (error) {
+          const finalData = {
+            ...data,
+            iwcVideoHelpCenter: [],
+          };
+          res.status(201).send({
+            status: "success",
+            data: finalData,
+          });
+        } else {
+          const finalData = {
+            ...data,
+            iwcVideoHelpCenter: responseData,
+          };
+          res.status(201).send({
+            status: "success",
+            data: finalData,
+          });
+        }
       });
     }
   });

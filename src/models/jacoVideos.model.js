@@ -3,6 +3,7 @@ const {
   addNewVideo: addNewVideoQuery,
   getAllVideos: getAllVideosQuery,
   getVideosByCollectionName: getVideosByCollectionNameQuery,
+  getVideoByCollectionId: getVideoByCollectionIdQuery,
 } = require("../database/queries");
 const { videoList } = require("../mockData/videos");
 const { logger } = require("../utils/logger");
@@ -72,6 +73,21 @@ class JacoVideos {
     );
   }
 
+  static fetchIWCHelpVideo(cb) {
+    db.query(getVideoByCollectionIdQuery, [213, 8], (err, res) => {
+      if (err) {
+        logger.error(err.message);
+        cb(err, null);
+        return;
+      }
+      if (res.length) {
+        cb(null, res);
+        return;
+      }
+      cb({ kind: "not_found" }, null);
+    });
+  }
+
   static fetchGalleryAPI(cb) {
     db.query(getAllVideosQuery, [12, 0], (err, res) => {
       if (err) {
@@ -80,15 +96,31 @@ class JacoVideos {
         return;
       }
       if (res.length) {
-        const response = {
-          top3: res.slice(0, 3),
-          iwc: res.slice(2, 8),
-          allVideos: res,
-        };
-        cb(null, response);
-        return;
+        db.query(getVideoByCollectionIdQuery, [195, 7], (error, data) => {
+          if (error) {
+            logger.error(error.message);
+            const response = {
+              top3: res.slice(0, 3),
+              iwc: res.slice(2, 8),
+              allVideos: res,
+              videoCollections: [],
+            };
+            cb(null, response);
+            return;
+          }
+          if (data.length) {
+            const response = {
+              top3: res.slice(0, 3),
+              iwc: res.slice(2, 8),
+              allVideos: res,
+              videoCollections: data,
+            };
+            cb(null, response);
+            return;
+          }
+          cb({ kind: "not_found" }, null);
+        });
       }
-      cb({ kind: "not_found" }, null);
     });
   }
 
