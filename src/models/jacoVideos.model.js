@@ -8,6 +8,14 @@ const {
 } = require("../database/queries");
 const { videoList } = require("../mockData/videos");
 const { logger } = require("../utils/logger");
+const mysql = require("mysql2/promise");
+
+const pool = mysql.createPool({
+  host: "iwc-testing-db.c6shtrginbef.us-east-1.rds.amazonaws.com",
+  user: "mkjaco",
+  password: "iwc234cwi",
+  database: "jaco_iv_db",
+});
 
 class JacoVideos {
   constructor(
@@ -146,8 +154,6 @@ class JacoVideos {
   }
 
   static getAllVideos(queryParams, cb) {
-    // cb(null, videoList);
-    // return;
     const offset = queryParams.limit * queryParams.pageNo - queryParams.limit;
     db.query(getAllVideosQuery, [queryParams.limit, offset], (err, res) => {
       if (err) {
@@ -177,6 +183,43 @@ class JacoVideos {
       }
       cb({ kind: "not_found" }, null);
     });
+  }
+
+  static async fetchSocialVideos(cb) {
+    const connection = await pool.getConnection();
+    const query1 = connection.query(getVideoByCollectionIdQuery, [231, 10]);
+    const query2 = connection.query(getVideoByCollectionIdQuery, [232, 10]);
+    const query3 = connection.query(getVideoByCollectionIdQuery, [233, 10]);
+    const query4 = connection.query(getVideoByCollectionIdQuery, [234, 10]);
+
+    try {
+      const [result1, result2, result3, result4] = await Promise.all([
+        query1,
+        query2,
+        query3,
+        query4,
+      ]);
+      const checkLength =
+        result1.length > 0 ||
+        result2.length > 0 ||
+        result3.length > 0 ||
+        result4.length > 0;
+      if (checkLength) {
+        const response = {
+          socialIssues: result1[0] || [],
+          socialMedia: result2[0] || [],
+          socialMovements: result3[0] || [],
+          society: result4[0] || [],
+        };
+        cb(null, response);
+        return;
+      }
+      cb({ kind: "not_found" }, null);
+    } catch (error) {
+      logger.error(error.message);
+      cb(error, null);
+      return;
+    }
   }
   //   static getUserRoleMappingByUserId(user_id, cb) {
   //     db.query(getUserRoleMappingByUserIdQuery, user_id, (err, res) => {

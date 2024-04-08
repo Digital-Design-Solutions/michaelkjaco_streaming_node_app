@@ -14,5 +14,8 @@ router.route("/addVideos").post(asyncHandler(jacoVideosController.addVideos));
 router
   .route("/searchVideos")
   .get(asyncHandler(jacoVideosController.searchVideos));
+router
+  .route("/fetchSocialVideos")
+  .get(asyncHandler(jacoVideosController.fetchSocialVideos));
 
 module.exports = router;
