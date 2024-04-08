@@ -2,9 +2,20 @@ const db = require("../config/db.config");
 const {
   addNewVideo: addNewVideoQuery,
   getAllVideos: getAllVideosQuery,
+  getVideosByCollectionName: getVideosByCollectionNameQuery,
+  getVideoByCollectionId: getVideoByCollectionIdQuery,
+  searchVideos: searchVideosQuery,
 } = require("../database/queries");
 const { videoList } = require("../mockData/videos");
 const { logger } = require("../utils/logger");
+const mysql = require("mysql2/promise");
+
+const pool = mysql.createPool({
+  host: "iwc-testing-db.c6shtrginbef.us-east-1.rds.amazonaws.com",
+  user: "mkjaco",
+  password: "iwc234cwi",
+  database: "jaco_iv_db",
+});
 
 class JacoVideos {
   constructor(
@@ -71,9 +82,78 @@ class JacoVideos {
     );
   }
 
+  static fetchIWCHelpVideo(cb) {
+    db.query(getVideoByCollectionIdQuery, [213, 8], (err, res) => {
+      if (err) {
+        logger.error(err.message);
+        cb(err, null);
+        return;
+      }
+      if (res.length) {
+        cb(null, res);
+        return;
+      }
+      cb({ kind: "not_found" }, null);
+    });
+  }
+
+  static fetchGalleryAPI(cb) {
+    db.query(getAllVideosQuery, [12, 0], (err, res) => {
+      if (err) {
+        logger.error(err.message);
+        cb(err, null);
+        return;
+      }
+      if (res.length) {
+        db.query(getVideoByCollectionIdQuery, [195, 7], (error, data) => {
+          if (error) {
+            logger.error(error.message);
+            const response = {
+              top3: res.slice(0, 3),
+              iwc: res.slice(2, 8),
+              allVideos: res,
+              videoCollections: [],
+            };
+            cb(null, response);
+            return;
+          }
+          if (data.length) {
+            const response = {
+              top3: res.slice(0, 3),
+              iwc: res.slice(2, 8),
+              allVideos: res,
+              videoCollections: data,
+            };
+            cb(null, response);
+            return;
+          }
+          cb({ kind: "not_found" }, null);
+        });
+      }
+    });
+  }
+
+  static getVideosByCollectionName(queryParams, cb) {
+    const offset = queryParams.limit * queryParams.pageNo - queryParams.limit;
+    db.query(
+      getVideosByCollectionNameQuery,
+      [queryParams.collectionName, queryParams.limit, offset],
+      (err, res) => {
+        if (err) {
+          logger.error(err.message);
+          cb(err, null);
+          return;
+        }
+        if (res.length) {
+          cb(null, res);
+          return;
+        }
+        cb({ kind: "not_found" }, null);
+      }
+    );
+  }
+
   static getAllVideos(queryParams, cb) {
-    // cb(null, videoList);
-    // return;
     const offset = queryParams.limit * queryParams.pageNo - queryParams.limit;
     db.query(getAllVideosQuery, [queryParams.limit, offset], (err, res) => {
       if (err) {
@@ -82,18 +162,65 @@ class JacoVideos {
         return;
       }
       if (res.length) {
-        const response = {
-          top3: res.slice(0, 3),
-          iwc: res.slice(2, 8),
-          allVideos: res,
-        };
-        cb(null, response);
+        cb(null, res);
         return;
       }
       cb({ kind: "not_found" }, null);
     });
   }
 
+  static searchVideos(searchQuery, cb) {
+    db.query(searchVideosQuery, [searchQuery, searchQuery], (err, res) => {
+      if (err) {
+        console.log(err);
+        logger.error(err.message);
+        cb(err, null);
+        return;
+      }
+      if (res.length) {
+        cb(null, res);
+        return;
+      }
+      cb({ kind: "not_found" }, null);
+    });
+  }
+
+  static async fetchSocialVideos(cb) {
+    const connection = await pool.getConnection();
+    const query1 = connection.query(getVideoByCollectionIdQuery, [231, 10]);
+    const query2 = connection.query(getVideoByCollectionIdQuery, [232, 10]);
+    const query3 = connection.query(getVideoByCollectionIdQuery, [233, 10]);
+    const query4 = connection.query(getVideoByCollectionIdQuery, [234, 10]);
+
+    try {
+      const [result1, result2, result3, result4] = await Promise.all([
+        query1,
+        query2,
+        query3,
+        query4,
+      ]);
+      const checkLength =
+        result1.length > 0 ||
+        result2.length > 0 ||
+        result3.length > 0 ||
+        result4.length > 0;
+      if (checkLength) {
+        const response = {
+          socialIssues: result1[0] || [],
+          socialMedia: result2[0] || [],
+          socialMovements: result3[0] || [],
+          society: result4[0] || [],
+        };
+        cb(null, response);
+        return;
+      }
+      cb({ kind: "not_found" }, null);
+    } catch (error) {
+      logger.error(error.message);
+      cb(error, null);
+      return;
+    }
+  }
   //   static getUserRoleMappingByUserId(user_id, cb) {
   //     db.query(getUserRoleMappingByUserIdQuery, user_id, (err, res) => {
   //       if (err) {
