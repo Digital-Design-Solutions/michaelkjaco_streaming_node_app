@@ -10,7 +10,7 @@ class VideoSpeaker {
     this.speaker_name = speaker_name;
   }
 
-  static addVideo(newSpeaker, cb) {
+  static addSpeaker(newSpeaker, cb) {
     db.query(addSpeakerQuery, [newSpeaker.speaker_name], (err, res) => {
       if (err) {
         logger.error(err.message);
@@ -21,7 +21,7 @@ class VideoSpeaker {
     });
   }
 
-  static getAllCategories(cb) {
+  static getAllSpeakers(cb) {
     db.query(getAllSpeakersSpeaker, (err, res) => {
       if (err) {
         logger.error(err.message);

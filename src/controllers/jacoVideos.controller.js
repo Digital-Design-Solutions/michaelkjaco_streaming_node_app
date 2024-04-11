@@ -76,18 +76,25 @@ exports.listVideos = (req, res) => {
   });
 };
 
-exports.addVideos = (payload, cb) => {
+exports.addVideos = (req, res) => {
+  const payload = req.body;
   JacoVideos.addVideo(payload, (err, data) => {
     if (err) {
-      cb(err, null);
+      res.status(500).send({
+        status: "error",
+        message: err.message,
+      });
     } else {
       const videoSpeaker = {
         video_id: payload.video_id,
-        speaker_id: 1,
+        speaker_id: payload.speaker_id,
       };
       VideoSpeakerMapping.create(videoSpeaker, (error, vsmData) => {
         if (err) {
-          cb(err, null);
+          res.status(500).send({
+            status: "error",
+            message: err.message,
+          });
         } else {
           res.status(201).send({ status: "success" });
         }

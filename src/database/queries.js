@@ -255,6 +255,8 @@ WHERE s.speaker_name LIKE '%' ? '%' OR v.new_title LIKE '%' ? '%';
 const getAllCategories = `SELECT * FROM categories`;
 const getAllSpeakers = `SELECT * FROM speakers`;
 
+const getAllCollections = `SELECT * FROM collections`;
+
 module.exports = {
   createDB,
   dropDB,
@@ -267,6 +269,7 @@ module.exports = {
   addSpeaker,
   addCategory,
   addCollection,
+  getAllCollections,
   getAllVideos,
   createNewVideoSpeakerMapping,
   getAllCategories,
