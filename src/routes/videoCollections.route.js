@@ -4,10 +4,10 @@ const { asyncHandler } = require("../middlewares/asyncHandler");
 const videoCollectionsController = require("../controllers/videoCollections.controller");
 
 router
-  .route("/listCategory")
+  .route("/listCollections")
   .get(asyncHandler(videoCollectionsController.listCollections));
 router
-  .route("/addCategory")
+  .route("/addCollection")
   .post(asyncHandler(videoCollectionsController.addCollection));
 
 module.exports = router;

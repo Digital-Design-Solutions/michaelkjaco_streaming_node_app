@@ -55,7 +55,7 @@ class JacoVideos {
       addNewVideoQuery,
       [
         newVideo.video_id,
-        newVideo.new_title,
+        newVideo.video_title,
         newVideo.synopsis,
         newVideo.tags,
         newVideo.release_date,
