@@ -18,4 +18,8 @@ router
   .route("/fetchSocialVideos")
   .get(asyncHandler(jacoVideosController.fetchSocialVideos));
 
+router
+  .route("/getLastVideo")
+  .get(asyncHandler(jacoVideosController.getLastVideo));
+
 module.exports = router;

@@ -76,7 +76,11 @@ const addCategory = `INSERT INTO categories VALUES(null, ?, TRUE, FALSE, NOW(), 
 const addCollection = `INSERT INTO collections VALUES(null, ?, TRUE, FALSE, NOW(), NOW())`;
 
 const addNewVideo = `
-INSERT INTO videos VALUES(
+INSERT INTO videos
+(video_id,new_title, synopsis,tags,release_date,s3_video_id,views,cover_image,duration,category_id,collection_id,availability, object_url,entity_tags,title,speaker_name,is_active,is_deleted,created_at,updated_at)
+VALUES(
+    ?,
+    ?,
     ?,
     ?,
     ?,
@@ -257,6 +261,42 @@ const getAllSpeakers = `SELECT * FROM speakers`;
 
 const getAllCollections = `SELECT * FROM collections`;
 
+const getLastVideo = `
+SELECT 
+    v.video_id,
+    v.new_title,
+    v.synopsis,
+    v.tags,
+    v.release_date,
+	v.s3_video_id,
+    v.views,
+    v.cover_image,
+    v.duration,
+    v.availability,
+    v.object_url,
+    v.entity_tags,
+    v.is_active,
+    v.is_deleted,
+    v.created_at,
+    v.updated_at,
+    c.collection_name,
+    v.category_id,
+    cat.category_name,
+    s.speaker_id,
+    s.speaker_name
+FROM 
+    videos v
+JOIN 
+    collections c ON v.collection_id = c.collection_id
+JOIN 
+    categories cat ON v.category_id = cat.category_id
+JOIN
+    video_speaker_mapping vsm ON v.video_id = vsm.video_id
+JOIN
+    speakers s ON vsm.speaker_id = s.speaker_id
+ORDER BY v.video_id DESC
+LIMIT 1;`;
+
 module.exports = {
   createDB,
   dropDB,
@@ -277,4 +317,5 @@ module.exports = {
   getVideosByCollectionName,
   getVideoByCollectionId,
   searchVideos,
+  getLastVideo,
 };

@@ -85,20 +85,21 @@ exports.addVideos = (req, res) => {
         message: err.message,
       });
     } else {
-      const videoSpeaker = {
-        video_id: payload.video_id,
-        speaker_id: payload.speaker_id,
-      };
-      VideoSpeakerMapping.create(videoSpeaker, (error, vsmData) => {
-        if (err) {
-          res.status(500).send({
-            status: "error",
-            message: err.message,
-          });
-        } else {
-          res.status(201).send({ status: "success" });
-        }
-      });
+      res.status(201).send({ status: "success" });
+      // const videoSpeaker = {
+      //   video_id: payload.video_id,
+      //   speaker_id: payload.speaker_id,
+      // };
+      // VideoSpeakerMapping.create(videoSpeaker, (error, vsmData) => {
+      //   if (err) {
+      //     res.status(500).send({
+      //       status: "error",
+      //       message: err.message,
+      //     });
+      //   } else {
+      //     res.status(201).send({ status: "success" });
+      //   }
+      // });
     }
   });
 };
@@ -121,6 +122,22 @@ exports.searchVideos = (req, res) => {
 
 exports.fetchSocialVideos = (req, res) => {
   JacoVideos.fetchSocialVideos((err, data) => {
+    if (err) {
+      res.status(500).send({
+        status: "error",
+        message: err.message,
+      });
+    } else {
+      res.status(201).send({
+        status: "success",
+        data,
+      });
+    }
+  });
+};
+
+exports.getLastVideo = (req, res) => {
+  JacoVideos.getLastVideo((err, data) => {
     if (err) {
       res.status(500).send({
         status: "error",
