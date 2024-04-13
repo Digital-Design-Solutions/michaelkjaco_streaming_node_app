@@ -5,6 +5,7 @@ const {
   getVideosByCollectionName: getVideosByCollectionNameQuery,
   getVideoByCollectionId: getVideoByCollectionIdQuery,
   searchVideos: searchVideosQuery,
+  getLastVideo: getLastVideoQuery,
 } = require("../database/queries");
 const { videoList } = require("../mockData/videos");
 const { logger } = require("../utils/logger");
@@ -55,7 +56,7 @@ class JacoVideos {
       addNewVideoQuery,
       [
         newVideo.video_id,
-        newVideo.video_title,
+        newVideo.new_title,
         newVideo.synopsis,
         newVideo.tags,
         newVideo.release_date,
@@ -68,6 +69,8 @@ class JacoVideos {
         newVideo.availability,
         newVideo.object_url,
         newVideo.entity_tags,
+        newVideo.title,
+        newVideo.speaker_name,
       ],
       (err, res) => {
         if (err) {
@@ -220,6 +223,21 @@ class JacoVideos {
       cb(error, null);
       return;
     }
+  }
+
+  static getLastVideo(cb) {
+    db.query(getLastVideoQuery, (err, res) => {
+      if (err) {
+        logger.error(err.message);
+        cb(err, null);
+        return;
+      }
+      if (res.length) {
+        cb(null, res);
+        return;
+      }
+      cb({ kind: "not_found" }, null);
+    });
   }
   //   static getUserRoleMappingByUserId(user_id, cb) {
   //     db.query(getUserRoleMappingByUserIdQuery, user_id, (err, res) => {

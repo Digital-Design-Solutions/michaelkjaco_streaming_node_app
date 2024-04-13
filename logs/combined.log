@@ -324,3 +324,37 @@
 {"level":"error","message":"Column count doesn't match value count at row 1"}
 {"level":"error","message":"Column count doesn't match value count at row 1"}
 {"level":"error","message":"Column count doesn't match value count at row 1"}
+{"level":"info","message":"Running on PORT 3001"}
+{"level":"error","message":"Column count doesn't match value count at row 1"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"Column count doesn't match value count at row 1"}
+{"level":"info","message":"Running on PORT 3001"}
+{"level":"error","message":"Duplicate entry 'MKJ00000830' for key 'videos.PRIMARY'"}
+{"level":"error","message":"Duplicate entry 'MKJ00000831' for key 'videos.PRIMARY'"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000832',\nNULL,\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
+{"level":"error","message":"Duplicate entry 'MKJ00000832' for key 'videos.PRIMARY'"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000833',\nNULL,\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
+{"level":"info","message":"Running on PORT 3001"}
+{"level":"error","message":"Column 'new_title' cannot be null"}
+{"level":"info","message":"Running on PORT 3001"}
+{"level":"error","message":"Column 'new_title' cannot be null"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000834',\nNULL,\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
+{"level":"info","message":"Running on PORT 3001"}
+{"level":"info","message":"Running on PORT 3001"}
+{"level":"info","message":"Running on PORT 3001"}
+{"level":"info","message":"Running on PORT 3001"}
+{"level":"info","message":"Running on PORT 3001"}
+{"level":"info","message":"Running on PORT 3001"}
+{"level":"info","message":"Running on PORT 3001"}
+{"level":"info","message":"Running on PORT 3001"}
+{"level":"error","message":"The first argument must be of type string or an instance of Buffer, ArrayBuffer, or Array or an Array-like Object. Received undefined"}
+{"level":"info","message":"Running on PORT 3001"}
+{"level":"error","message":"The first argument must be of type string or an instance of Buffer, ArrayBuffer, or Array or an Array-like Object. Received undefined"}
+{"level":"info","message":"Running on PORT 3001"}
+{"level":"error","message":"Duplicate entry 'MKJ00000829' for key 'videos.PRIMARY'"}
+{"level":"error","message":"Duplicate entry 'MKJ00000829' for key 'videos.PRIMARY'"}
+{"level":"info","message":"Running on PORT 3001"}
+{"level":"error","message":"Duplicate entry 'MKJ00000829' for key 'videos.PRIMARY'"}
+{"level":"error","message":"Duplicate entry 'MKJ00000829' for key 'videos.PRIMARY'"}
