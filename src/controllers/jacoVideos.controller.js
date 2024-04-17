@@ -1,5 +1,4 @@
 const JacoVideos = require("../models/jacoVideos.model");
-const VideoSpeakerMapping = require("../models/videoSpeakerMapping.model");
 
 exports.fetchGalleryVideos = (req, res) => {
   JacoVideos.fetchGalleryAPI((err, data) => {
@@ -138,6 +137,43 @@ exports.fetchSocialVideos = (req, res) => {
 
 exports.getLastVideo = (req, res) => {
   JacoVideos.getLastVideo((err, data) => {
+    if (err) {
+      res.status(500).send({
+        status: "error",
+        message: err.message,
+      });
+    } else {
+      res.status(201).send({
+        status: "success",
+        data,
+      });
+    }
+  });
+};
+
+exports.wildSearchVideos = (req, res) => {
+  const payload = {
+    collectionName: req.body.collectionName,
+    categoryName: req.body.categoryName,
+    newTitle: req.body.newTitle,
+  };
+  JacoVideos.wildSearchVideos(payload, (err, data) => {
+    if (err) {
+      res.status(500).send({
+        status: "error",
+        message: err.message,
+      });
+    } else {
+      res.status(201).send({
+        status: "success",
+        data,
+      });
+    }
+  });
+};
+
+exports.getVideoDetailsById = (req, res) => {
+  JacoVideos.getVideoDetailsById(req.query.video_id, (err, data) => {
     if (err) {
       res.status(500).send({
         status: "error",

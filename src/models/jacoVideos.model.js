@@ -6,6 +6,8 @@ const {
   getVideoByCollectionId: getVideoByCollectionIdQuery,
   searchVideos: searchVideosQuery,
   getLastVideo: getLastVideoQuery,
+  wildSearchVideos: wildSearchVideosQuery,
+  videoDetailsById: videoDetailsByIdQuery,
 } = require("../database/queries");
 const { videoList } = require("../mockData/videos");
 const { logger } = require("../utils/logger");
@@ -239,20 +241,45 @@ class JacoVideos {
       cb({ kind: "not_found" }, null);
     });
   }
-  //   static getUserRoleMappingByUserId(user_id, cb) {
-  //     db.query(getUserRoleMappingByUserIdQuery, user_id, (err, res) => {
-  //       if (err) {
-  //         logger.error(err.message);
-  //         cb(err, null);
-  //         return;
-  //       }
-  //       if (res.length) {
-  //         cb(null, res);
-  //         return;
-  //       }
-  //       cb({ kind: "not_found" }, null);
-  //     });
-  //   }
+
+  static wildSearchVideos(payload, cb) {
+    db.query(
+      wildSearchVideosQuery,
+      [payload.collectionName, payload.categoryName, payload.newTitle],
+      (err, res) => {
+        if (err) {
+          console.log(err);
+          logger.error(err.message);
+          cb(err, null);
+          return;
+        }
+        if (res.length) {
+          cb(null, res);
+          return;
+        } else {
+          cb(null, []);
+          return;
+        }
+      }
+    );
+  }
+
+  static getVideoDetailsById(videoID, cb) {
+    db.query(videoDetailsByIdQuery, [videoID], (err, res) => {
+      if (err) {
+        logger.error(err.message);
+        cb(err, null);
+        return;
+      }
+      if (res.length) {
+        cb(null, res);
+        return;
+      } else {
+        cb(null, []);
+        return;
+      }
+    });
+  }
 }
 
 module.exports = JacoVideos;
