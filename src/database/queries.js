@@ -297,6 +297,62 @@ JOIN
 ORDER BY v.video_id DESC
 LIMIT 1;`;
 
+const wildSearchVideos = `
+SELECT 
+    v.video_id,
+    v.new_title,
+    v.views,
+    c.collection_name,
+    v.category_id,
+    cat.category_name
+FROM 
+    videos v
+JOIN 
+    collections c ON v.collection_id = c.collection_id
+JOIN 
+    categories cat ON v.category_id = cat.category_id
+JOIN
+    video_speaker_mapping vsm ON v.video_id = vsm.video_id
+JOIN
+    speakers s ON vsm.speaker_id = s.speaker_id
+WHERE c.collection_name LIKE '%' ? '%' AND cat.category_name LIKE '%' ? '%' AND v.new_title LIKE '%' ? '%';
+`;
+
+const videoDetailsById = `
+SELECT 
+    v.video_id,
+    v.new_title,
+    v.synopsis,
+    v.tags,
+    v.release_date,
+	v.s3_video_id,
+    v.views,
+    v.cover_image,
+    v.duration,
+    v.availability,
+    v.object_url,
+    v.entity_tags,
+    v.is_active,
+    v.is_deleted,
+    v.created_at,
+    v.updated_at,
+    c.collection_name,
+    v.category_id,
+    cat.category_name,
+    s.speaker_id,
+    s.speaker_name
+FROM 
+    videos v
+JOIN 
+    collections c ON v.collection_id = c.collection_id
+JOIN 
+    categories cat ON v.category_id = cat.category_id
+JOIN
+    video_speaker_mapping vsm ON v.video_id = vsm.video_id
+JOIN
+    speakers s ON vsm.speaker_id = s.speaker_id
+WHERE v.video_id = ?;
+`;
 module.exports = {
   createDB,
   dropDB,
@@ -318,4 +374,6 @@ module.exports = {
   getVideoByCollectionId,
   searchVideos,
   getLastVideo,
+  wildSearchVideos,
+  videoDetailsById,
 };

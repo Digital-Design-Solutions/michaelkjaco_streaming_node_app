@@ -82,3 +82,13 @@
 {"level":"error","message":"Duplicate entry 'MKJ00000829' for key 'videos.PRIMARY'"}
 {"level":"error","message":"Duplicate entry 'MKJ00000829' for key 'videos.PRIMARY'"}
 {"level":"error","message":"Duplicate entry 'MKJ00000829' for key 'videos.PRIMARY'"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"read ETIMEDOUT"}
+{"level":"error","message":"read ETIMEDOUT"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"read ECONNRESET"}
