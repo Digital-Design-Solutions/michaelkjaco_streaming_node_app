@@ -187,3 +187,16 @@ exports.getVideoDetailsById = (req, res) => {
     }
   });
 };
+
+exports.updateVideoById = (req, res) => {
+  JacoVideos.updateVideoById(req.body, (err) => {
+    if (err) {
+      res.status(500).send({
+        status: "error",
+        message: err.message,
+      });
+    } else {
+      res.status(201).send({ status: "success" });
+    }
+  });
+};
