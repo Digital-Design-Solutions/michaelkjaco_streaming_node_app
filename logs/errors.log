@@ -115,3 +115,4 @@
 {"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000049',\n'52',\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
 {"level":"error","message":"FUNCTION jaco_iv_db.ARRAY_AGG does not exist"}
 {"level":"error","message":"FUNCTION jaco_iv_db.ARRAY_AGG does not exist"}
+{"level":"error","message":"read ECONNRESET"}
