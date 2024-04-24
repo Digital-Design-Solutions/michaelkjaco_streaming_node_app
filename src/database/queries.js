@@ -103,13 +103,7 @@ VALUES(
 `;
 
 const createNewVideoSpeakerMapping = `
-null,
-?,
-?,
-TRUE,
-FALSE,
-NOW(),
-NOW()
+INSERT INTO video_speaker_mapping VALUES(null,?,?,TRUE,FALSE,NOW(),NOW())
 `;
 
 const getAllVideos = `
@@ -341,7 +335,7 @@ SELECT
     v.category_id,
     cat.category_name,
     s.speaker_id,
-    s.speaker_name
+    GROUP_CONCAT(s.speaker_name SEPARATOR ', ') AS speaker_name
 FROM 
     videos v
 JOIN 
@@ -356,7 +350,15 @@ WHERE v.video_id = ?;
 `;
 
 const updateVideoById = `
-UPDATE videos SET new_title = ?, synopsis = ?, tags = ?, release_date = ?, s3_video_id = ?, views = ?, cover_image = ?, duration = ?, category_id = ?, collection_id = ?, availability = ?, object_url = ?, entity_tags = ?, title = ?, speaker_name = ?, is_active = ?, is_deleted = ?, updated_at = NOW() where video_id = ?;
+UPDATE videos SET new_title = ?, synopsis = ?, tags = ?, release_date = ?, 
+s3_video_id = ?, views = ?, cover_image = ?, duration = ?, category_id = ?, 
+collection_id = ?, availability = ?, object_url = ?, entity_tags = ?, title = ?, 
+is_active = ?, is_deleted = ?, updated_at = NOW() 
+where video_id = ?;
+`;
+
+const deleteVideoSpeakerMappingByVideoId = `
+DELETE FROM video_speaker_mapping where video_id = ?
 `;
 
 module.exports = {
@@ -383,4 +385,5 @@ module.exports = {
   wildSearchVideos,
   videoDetailsById,
   updateVideoById,
+  deleteVideoSpeakerMappingByVideoId,
 };

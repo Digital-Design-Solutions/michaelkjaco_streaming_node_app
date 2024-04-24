@@ -12,6 +12,7 @@ const {
 } = require("../database/queries");
 const { logger } = require("../utils/logger");
 const mysql = require("mysql2/promise");
+const VideoSpeakerMapping = require("./videoSpeakerMapping.model");
 
 const pool = mysql.createPool({
   host: "iwc-testing-db.c6shtrginbef.us-east-1.rds.amazonaws.com",
@@ -299,7 +300,6 @@ class JacoVideos {
         editVideo.object_url,
         editVideo.entity_tags,
         editVideo.title,
-        editVideo.speaker_name,
         editVideo.is_active,
         editVideo.is_deleted,
         editVideo.video_id,
@@ -310,7 +310,34 @@ class JacoVideos {
           cb(err, null);
           return;
         }
-        cb(null, {});
+        VideoSpeakerMapping.deleteMapping(
+          editVideo.video_id,
+          (err, _response) => {
+            if (err) {
+              logger.error(err.message);
+              cb(err, null);
+              return;
+            }
+            editVideo.speaker_id.map((speaker_id, index) => {
+              const videoSpeaker = {
+                video_id: editVideo.video_id,
+                speaker_id: speaker_id,
+              };
+              VideoSpeakerMapping.createVideoSpeakerMapping(
+                videoSpeaker,
+                (err, _createStatus) => {
+                  if (err) {
+                    cb(err.message, null);
+                  } else {
+                    if (editVideo.speaker_id.length - 1 === index) {
+                      cb(null, {});
+                    }
+                  }
+                }
+              );
+            });
+          }
+        );
       }
     );
   }

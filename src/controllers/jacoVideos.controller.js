@@ -39,7 +39,7 @@ exports.getVideosByCollectionName = (req, res) => {
     limit: parseInt(req.body.limit),
     collectionName: req.body.collectionName,
   };
-  console.log("queryParams", queryParams);
+
   JacoVideos.getVideosByCollectionName(queryParams, (err, data) => {
     if (err) {
       res.status(500).send({
@@ -85,20 +85,6 @@ exports.addVideos = (req, res) => {
       });
     } else {
       res.status(201).send({ status: "success" });
-      // const videoSpeaker = {
-      //   video_id: payload.video_id,
-      //   speaker_id: payload.speaker_id,
-      // };
-      // VideoSpeakerMapping.create(videoSpeaker, (error, vsmData) => {
-      //   if (err) {
-      //     res.status(500).send({
-      //       status: "error",
-      //       message: err.message,
-      //     });
-      //   } else {
-      //     res.status(201).send({ status: "success" });
-      //   }
-      // });
     }
   });
 };
