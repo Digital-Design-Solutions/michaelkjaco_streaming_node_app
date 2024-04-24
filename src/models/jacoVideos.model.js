@@ -8,10 +8,11 @@ const {
   getLastVideo: getLastVideoQuery,
   wildSearchVideos: wildSearchVideosQuery,
   videoDetailsById: videoDetailsByIdQuery,
+  updateVideoById: updateVideoByIdQuery,
 } = require("../database/queries");
-const { videoList } = require("../mockData/videos");
 const { logger } = require("../utils/logger");
 const mysql = require("mysql2/promise");
+const VideoSpeakerMapping = require("./videoSpeakerMapping.model");
 
 const pool = mysql.createPool({
   host: "iwc-testing-db.c6shtrginbef.us-east-1.rds.amazonaws.com",
@@ -279,6 +280,66 @@ class JacoVideos {
         return;
       }
     });
+  }
+
+  static updateVideoById(editVideo, cb) {
+    db.query(
+      updateVideoByIdQuery,
+      [
+        editVideo.new_title,
+        editVideo.synopsis,
+        editVideo.tags,
+        editVideo.release_date,
+        editVideo.s3_video_id,
+        editVideo.views,
+        editVideo.cover_image,
+        editVideo.duration,
+        editVideo.category_id,
+        editVideo.collection_id,
+        editVideo.availability,
+        editVideo.object_url,
+        editVideo.entity_tags,
+        editVideo.title,
+        editVideo.is_active,
+        editVideo.is_deleted,
+        editVideo.video_id,
+      ],
+      (err, res) => {
+        if (err) {
+          logger.error(err.message);
+          cb(err, null);
+          return;
+        }
+        VideoSpeakerMapping.deleteMapping(
+          editVideo.video_id,
+          (err, _response) => {
+            if (err) {
+              logger.error(err.message);
+              cb(err, null);
+              return;
+            }
+            editVideo.speaker_id.map((speaker_id, index) => {
+              const videoSpeaker = {
+                video_id: editVideo.video_id,
+                speaker_id: speaker_id,
+              };
+              VideoSpeakerMapping.createVideoSpeakerMapping(
+                videoSpeaker,
+                (err, _createStatus) => {
+                  if (err) {
+                    cb(err.message, null);
+                  } else {
+                    if (editVideo.speaker_id.length - 1 === index) {
+                      cb(null, {});
+                    }
+                  }
+                }
+              );
+            });
+          }
+        );
+      }
+    );
   }
 }
 

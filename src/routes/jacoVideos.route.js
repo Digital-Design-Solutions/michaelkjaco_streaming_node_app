@@ -26,5 +26,8 @@ router
 router
   .route("/getVideoDetailsById")
   .get(asyncHandler(jacoVideosController.getVideoDetailsById));
+router
+  .route("/updateVideoById")
+  .put(asyncHandler(jacoVideosController.updateVideoById));
 
 module.exports = router;

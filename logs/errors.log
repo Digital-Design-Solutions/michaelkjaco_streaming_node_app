@@ -92,3 +92,26 @@
 {"level":"error","message":"read ECONNRESET"}
 {"level":"error","message":"read ECONNRESET"}
 {"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"Duplicate entry 'MKJ00000836' for key 'videos.PRIMARY'"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`jaco_iv_db`.`videos`, CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`))"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`jaco_iv_db`.`videos`, CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`))"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`jaco_iv_db`.`videos`, CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`))"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`jaco_iv_db`.`videos`, CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`))"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`jaco_iv_db`.`videos`, CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`))"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`jaco_iv_db`.`videos`, CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`))"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`jaco_iv_db`.`videos`, CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`))"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`jaco_iv_db`.`videos`, CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`))"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`jaco_iv_db`.`videos`, CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`))"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?, updated_at = NOW() where video_id = ?' at line 1"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?, updated_at = NOW() where video_id = ?' at line 1"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* from video_speaker_mapping where video_id = 'MKJ00000047'' at line 1"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* from video_speaker_mapping where video_id = 'MKJ00000047'' at line 1"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000047',\nNULL,\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000047',\nNULL,\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000047',\n45,\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000047',\nNULL,\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000047',\n'5',\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000049',\n'51',\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000049',\n'52',\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
+{"level":"error","message":"FUNCTION jaco_iv_db.ARRAY_AGG does not exist"}
+{"level":"error","message":"FUNCTION jaco_iv_db.ARRAY_AGG does not exist"}

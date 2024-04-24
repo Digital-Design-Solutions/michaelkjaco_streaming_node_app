@@ -2,6 +2,7 @@ const db = require("../config/db.config");
 const {
   createNewVideoSpeakerMapping: createNewVideoSpeakerMappingQuery,
   getVideoSpeakerMappingByUserId: getVideoSpeakerMappingByUserIdQuery,
+  deleteVideoSpeakerMappingByVideoId: deleteVideoSpeakerMappingByVideoIdQuery,
 } = require("../database/queries");
 const { logger } = require("../utils/logger");
 
@@ -11,7 +12,7 @@ class VideoSpeakerMapping {
     this.speaker_id = speaker_id;
   }
 
-  static create(videoSpeaker, cb) {
+  static createVideoSpeakerMapping(videoSpeaker, cb) {
     db.query(
       createNewVideoSpeakerMappingQuery,
       [videoSpeaker.video_id, videoSpeaker.speaker_id],
@@ -21,9 +22,7 @@ class VideoSpeakerMapping {
           cb(err, null);
           return;
         }
-        cb(null, {
-          video_speaker_id: res.video_speaker_id,
-        });
+        cb(null, true);
       }
     );
   }
@@ -41,6 +40,21 @@ class VideoSpeakerMapping {
       }
       cb({ kind: "not_found" }, null);
     });
+  }
+
+  static deleteMapping(video_id, cb) {
+    db.query(
+      deleteVideoSpeakerMappingByVideoIdQuery,
+      [video_id],
+      (err, res) => {
+        if (err) {
+          logger.error(err.message);
+          cb(err, null);
+          return;
+        }
+        cb(null, true);
+      }
+    );
   }
 }
 
