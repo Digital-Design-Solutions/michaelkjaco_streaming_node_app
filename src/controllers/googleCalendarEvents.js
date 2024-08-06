@@ -66,12 +66,17 @@ exports.getEvnets =async (req, res) => {
         const formattedEvents = events.data.items.map(event => {
           const start = new Date(event.start.dateTime || event.start.date);
           const end = new Date(event.end.dateTime || event.end.date);
+
+          // const startTimeZone = event.start.timeZone || 'UTC';  // Default to UTC if timeZone is not present
+          // const endTimeZone = event.end.timeZone || 'UTC';      // Default to UTC if timeZone is not present
+      
     
           const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
           const day = start.toLocaleDateString('en-US', { weekday: 'long' });
           const month = start.toLocaleDateString('en-US', { month: 'long' });
-          const startTime = start.toLocaleTimeString('en-US');
-          const endTime = end.toLocaleTimeString('en-US');
+          const timeOptions = { hour: '2-digit', minute: '2-digit' };
+          const startTime = start.toLocaleTimeString('en-US',timeOptions);
+          const endTime = end.toLocaleTimeString('en-US',timeOptions);
     
           return {
             summary: event.summary,
@@ -79,7 +84,8 @@ exports.getEvnets =async (req, res) => {
             month,
             date: start.toLocaleDateString('en-US', options),
             startTime,
-            endTime
+            endTime,
+            
           };
         });
     
