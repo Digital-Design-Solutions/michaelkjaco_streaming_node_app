@@ -71,9 +71,43 @@ FOREIGN KEY (category_id) REFERENCES categories(category_id),
 FOREIGN KEY (collection_id) REFERENCES collections(collection_id)
 )`;
 
+// users
+
+const createTableUsers = `CREATE TABLE users (
+    id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    wp_id INT UNIQUE,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    email_verified_at TIMESTAMP,
+    password VARCHAR(255) NOT NULL,
+    remember_token VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    current_period_end INT,
+    current_period_start INT,
+    wp_initial_import TINYINT(1)
+)`;
+
+
+// notifications
+
+const createTableNotifications = `CREATE TABLE notifications (
+    id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    notification TEXT NOT NULL,
+    notification_type ENUM('system', 'app') NOT NULL,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    status VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)`;
+
 const addSpeaker = `INSERT INTO speakers VALUES(null, ?, TRUE, FALSE, NOW(), NOW())`;
 const addCategory = `INSERT INTO categories VALUES(null, ?, TRUE, FALSE, NOW(), NOW())`;
 const addCollection = `INSERT INTO collections VALUES(null, ?, TRUE, FALSE, NOW(), NOW())`;
+
+const addNotification = `INSERT INTO notifications VALUES(null, ?, ?, ?,?,?, NOW(), NOW())`;
+
 
 const addNewVideo = `
 INSERT INTO videos
@@ -229,6 +263,8 @@ WHERE  v.new_title LIKE '%' ? '%';
 const getAllCategories = `SELECT * FROM categories`;
 const getAllSpeakers = `SELECT * FROM speakers`;
 
+const getAllNOtifications = `SELECT * FROM notifications order by created_at desc`
+
 const getAllCollections = `SELECT * FROM collections`;
 
 const getLastVideo = `
@@ -336,6 +372,8 @@ module.exports = {
   createTableCategories,
   createTableCollections,
   createTableVideo,
+  createTableUsers,
+  createTableNotifications,
   addNewVideo,
   addSpeaker,
   addCategory,
@@ -353,4 +391,6 @@ module.exports = {
   videoDetailsById,
   updateVideoById,
   deleteVideoSpeakerMappingByVideoId,
+  getAllNOtifications,
+  addNotification
 };

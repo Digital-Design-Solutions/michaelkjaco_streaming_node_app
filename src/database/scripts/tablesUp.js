@@ -5,6 +5,9 @@ const {
   createTableCollections: createTableCollectionsQuery,
   createTableSpeakers: createTableSpeakersQuery,
   createTableVideoSpeakerMapping: createTableVideoSpeakerMappingQuery,
+  createTableUsers: createTableUsersQuery,
+  createTableNotifications: createTableNotificationsQuery,
+
 } = require("../queries");
 
 (() => {
@@ -60,4 +63,27 @@ const {
       process.exit(0);
     }
   );
+  require("../../config/db.config").query(
+    createTableUsersQuery,
+    (err, _) => {
+      if (err) {
+        logger.error(err.message);
+        return;
+      }
+      logger.info("Table Users created!");
+      process.exit(0);
+    }
+  );
+  require("../../config/db.config").query(
+    createTableNotificationsQuery,
+    (err, _) => {
+      if (err) {
+        logger.error(err.message);
+        return;
+      }
+      logger.info("Table Notifications created!");
+      process.exit(0);
+    }
+  );
+
 })();

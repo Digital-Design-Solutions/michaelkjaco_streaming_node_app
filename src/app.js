@@ -8,6 +8,7 @@ const videoCategoryRoute = require("./routes/videoCategory.route");
 const videoSpeakerRoute = require("./routes/videoSpeaker.route");
 const videoCollectionRoute = require("./routes/videoCollections.route");
 const googleCalendarCollectionRoute = require("./routes/googleCalendar.route");
+const notificationCollectionRoute = require("./routes/notifications.route");
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use("/api/videoCategory", videoCategoryRoute);
 app.use("/api/videoSpeaker", videoSpeakerRoute);
 app.use("/api/videoCollection", videoCollectionRoute);
 app.use("/api/events", googleCalendarCollectionRoute);
+app.use("/api/notification", notificationCollectionRoute);
 
 // Configure AWS SDK with your credentials and region
 // AWS.config.update({
