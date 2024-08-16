@@ -126,7 +126,7 @@ class JacoVideos {
           if (data.length) {
             const response = {
               top3: res.slice(0, 3),
-              iwc: res.slice(2, 8),
+              iwc: res.slice(2, 10),
               allVideos: res,
               videoCollections: data,
             };
