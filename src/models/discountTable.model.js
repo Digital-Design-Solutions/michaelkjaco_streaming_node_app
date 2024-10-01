@@ -19,11 +19,12 @@ con.connect(err => {
 const createDiscountTable = () => {
   const sql = `CREATE TABLE IF NOT EXISTS Discount (
     discount_id INT AUTO_INCREMENT PRIMARY KEY,
+    discount_name VARCHAR(255),
     discount_code VARCHAR(255),
-    discount_type VARCHAR(50),
-    discount_value DECIMAL(10, 2),
+    discount_percentage VARCHAR(50),
     usage_limit INT,
-    min_purchase DECIMAL(10, 2),
+    discount_description VARCHAR(255),
+    status Boolean,
     start_date DATETIME,
     end_date DATETIME
   )`;

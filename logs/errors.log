@@ -118,3 +118,4 @@
 {"level":"error","message":"read ECONNRESET"}
 {"level":"error","message":"Unknown database 'michael_jaco_client_db_aws_lightsail'"}
 {"level":"error","message":"Unknown database 'michael_jaco_client_db_aws_lightsail'"}
+{"code":"ER_NO_SUCH_TABLE","errno":1146,"level":"error","sql":"INSERT INTO Discount SET `discount_code` = 'SUMMER2024', `discount_name` = 'Percentage', `discount_percentage` = 15, `usage_limit` = 100, `discount_description` = 'TEST', `status` = true, `start_date` = '2024-06-01T00:00:00', `end_date` = '2024-08-31T23:59:59'","sqlMessage":"Table 'jaco_iv_db.Discount' doesn't exist","sqlState":"42S02"}
