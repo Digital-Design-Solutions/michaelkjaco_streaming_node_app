@@ -116,3 +116,5 @@
 {"level":"error","message":"FUNCTION jaco_iv_db.ARRAY_AGG does not exist"}
 {"level":"error","message":"FUNCTION jaco_iv_db.ARRAY_AGG does not exist"}
 {"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"Unknown database 'michael_jaco_client_db_aws_lightsail'"}
+{"level":"error","message":"Unknown database 'michael_jaco_client_db_aws_lightsail'"}

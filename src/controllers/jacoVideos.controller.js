@@ -89,6 +89,7 @@ exports.addVideos = (req, res) => {
   });
 };
 
+
 exports.searchVideos = (req, res) => {
   JacoVideos.searchVideos(req.query.searchQuery, (err, data) => {
     if (err) {

@@ -4,6 +4,7 @@ const createDB = `CREATE DATABASE IF NOT EXISTS ${DB_NAME}`;
 
 const dropDB = `DROP DATABASE IF EXISTS ${DB_NAME}`;
 
+
 //  Speakers
 
 const createTableSpeakers = `CREATE TABLE speakers (speaker_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
