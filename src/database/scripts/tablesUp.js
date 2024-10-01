@@ -1,12 +1,11 @@
 const { logger } = require("../../utils/logger");
 const {
-  createTableVideo: createTableVideoQuery,
   createTableCategories: createTableCategoriesQuery,
   createTableCollections: createTableCollectionsQuery,
   createTableSpeakers: createTableSpeakersQuery,
   createTableVideoSpeakerMapping: createTableVideoSpeakerMappingQuery,
+  createTableVideo: createTableVideoQuery,
 } = require("../queries");
-
 (() => {
   require("../../config/db.config").query(createTableVideoQuery, (err, _) => {
     if (err) {

@@ -1,0 +1,3 @@
+::1 - - [26/Sep/2024:07:29:47 +0000] "POST /api/login HTTP/1.1" 200 214 "-" "PostmanRuntime/7.42.0"
+::1 - - [26/Sep/2024:09:12:13 +0000] "POST /api/login HTTP/1.1" 200 214 "-" "PostmanRuntime/7.42.0"
+::1 - - [26/Sep/2024:09:56:02 +0000] "GET /api/inFlow/getAllProducts HTTP/1.1" 404 164 "-" "PostmanRuntime/7.42.0"
