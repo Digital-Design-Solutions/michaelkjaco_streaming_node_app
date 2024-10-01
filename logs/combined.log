@@ -555,3 +555,13 @@
 {"level":"info","message":"Running on PORT 3001"}
 {"level":"info","message":"MySQL Connected"}
 {"level":"info","message":"Discount Table created"}
+{"level":"info","message":"Running on PORT 3001"}
+{"level":"info","message":"MySQL Connected"}
+{"level":"info","message":"Discount Table created"}
+{"level":"info","message":"Running on PORT 3001"}
+{"level":"info","message":"MySQL Connected"}
+{"level":"info","message":"Discount Table created"}
+{"code":"ER_DUP_ENTRY","errno":1062,"level":"error","sql":"INSERT INTO users SET `name` = 'John Doe1', `email` = 'john1@example.com', `password` = 'mypassword'","sqlMessage":"Duplicate entry 'john1@example.com' for key 'users.email'","sqlState":"23000"}
+{"level":"info","message":"Running on PORT 3001"}
+{"level":"info","message":"MySQL Connected"}
+{"level":"info","message":"Discount Table created"}
