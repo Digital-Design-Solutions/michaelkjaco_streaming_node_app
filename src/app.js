@@ -7,6 +7,10 @@ const jacoVideosRoute = require("./routes/jacoVideos.route");
 const videoCategoryRoute = require("./routes/videoCategory.route");
 const videoSpeakerRoute = require("./routes/videoSpeaker.route");
 const videoCollectionRoute = require("./routes/videoCollections.route");
+const discountRoutes = require('./routes/discountRoutes');
+const userRoutes = require('./routes/userRoute');
+const customerRoutes = require('./routes/customerRoutes');
+
 
 const app = express();
 
@@ -20,6 +24,9 @@ app.use("/api/video", jacoVideosRoute);
 app.use("/api/videoCategory", videoCategoryRoute);
 app.use("/api/videoSpeaker", videoSpeakerRoute);
 app.use("/api/videoCollection", videoCollectionRoute);
+app.use(discountRoutes);
+app.use(userRoutes);
+app.use(customerRoutes);
 
 // Configure AWS SDK with your credentials and region
 // AWS.config.update({
@@ -39,6 +46,8 @@ app.get("/", async (req, res) => {
     },
   });
 });
+
+
 
 app.use((err, req, res, next) => {
   res.status(err.statusCode || 500).send({

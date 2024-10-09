@@ -5,9 +5,9 @@ const videoSpeakerController = require("../controllers/videoSpeaker.controller")
 
 router
   .route("/listSpeaker")
-  .get(asyncHandler(videoSpeakerController.listCategories));
+  .get(asyncHandler(videoSpeakerController.listSpeakers));
 router
   .route("/addSpeaker")
-  .post(asyncHandler(videoSpeakerController.addCategory));
+  .post(asyncHandler(videoSpeakerController.addSpeaker));
 
 module.exports = router;

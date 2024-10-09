@@ -7,3 +7,116 @@
 {"level":"error","message":"connect ETIMEDOUT"}
 {"level":"error","message":"connect ETIMEDOUT"}
 {"level":"error","message":"connect ETIMEDOUT"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '10 LIMIT 0 OFFSET ?' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '10 LIMIT 0 OFFSET ?' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' OFFSET 12' at line 33"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"Undeclared variable: NaN"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Talor' at line 33"}
+{"level":"error","message":"read ETIMEDOUT"}
+{"level":"error","message":"read ETIMEDOUT"}
+{"level":"error","message":"read ETIMEDOUT"}
+{"level":"error","message":"You have tried to call .then(), .catch(), or invoked await on the result of query that is not a promise, which is a programming error. Try calling con.promise().query(), or require('mysql2/promise') instead of 'mysql2' for a promise-compatible version of the query interface. To learn how to use async/await or Promises check out documentation at https://sidorares.github.io/node-mysql2/docs#using-promise-wrapper, or the mysql2 documentation at https://sidorares.github.io/node-mysql2/docs/documentation/promise-wrapper"}
+{"level":"error","message":"You have tried to call .then(), .catch(), or invoked await on the result of query that is not a promise, which is a programming error. Try calling con.promise().query(), or require('mysql2/promise') instead of 'mysql2' for a promise-compatible version of the query interface. To learn how to use async/await or Promises check out documentation at https://sidorares.github.io/node-mysql2/docs#using-promise-wrapper, or the mysql2 documentation at https://sidorares.github.io/node-mysql2/docs/documentation/promise-wrapper"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 33"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 33"}
+{"level":"error","message":"You have tried to call .then(), .catch(), or invoked await on the result of query that is not a promise, which is a programming error. Try calling con.promise().query(), or require('mysql2/promise') instead of 'mysql2' for a promise-compatible version of the query interface. To learn how to use async/await or Promises check out documentation at https://sidorares.github.io/node-mysql2/docs#using-promise-wrapper, or the mysql2 documentation at https://sidorares.github.io/node-mysql2/docs/documentation/promise-wrapper"}
+{"level":"error","message":"You have tried to call .then(), .catch(), or invoked await on the result of query that is not a promise, which is a programming error. Try calling con.promise().query(), or require('mysql2/promise') instead of 'mysql2' for a promise-compatible version of the query interface. To learn how to use async/await or Promises check out documentation at https://sidorares.github.io/node-mysql2/docs#using-promise-wrapper, or the mysql2 documentation at https://sidorares.github.io/node-mysql2/docs/documentation/promise-wrapper"}
+{"level":"error","message":"You have tried to call .then(), .catch(), or invoked await on the result of query that is not a promise, which is a programming error. Try calling con.promise().query(), or require('mysql2/promise') instead of 'mysql2' for a promise-compatible version of the query interface. To learn how to use async/await or Promises check out documentation at https://sidorares.github.io/node-mysql2/docs#using-promise-wrapper, or the mysql2 documentation at https://sidorares.github.io/node-mysql2/docs/documentation/promise-wrapper"}
+{"level":"error","message":"You have tried to call .then(), .catch(), or invoked await on the result of query that is not a promise, which is a programming error. Try calling con.promise().query(), or require('mysql2/promise') instead of 'mysql2' for a promise-compatible version of the query interface. To learn how to use async/await or Promises check out documentation at https://sidorares.github.io/node-mysql2/docs#using-promise-wrapper, or the mysql2 documentation at https://sidorares.github.io/node-mysql2/docs/documentation/promise-wrapper"}
+{"level":"error","message":"You have tried to call .then(), .catch(), or invoked await on the result of query that is not a promise, which is a programming error. Try calling con.promise().query(), or require('mysql2/promise') instead of 'mysql2' for a promise-compatible version of the query interface. To learn how to use async/await or Promises check out documentation at https://sidorares.github.io/node-mysql2/docs#using-promise-wrapper, or the mysql2 documentation at https://sidorares.github.io/node-mysql2/docs/documentation/promise-wrapper"}
+{"level":"error","message":"You have tried to call .then(), .catch(), or invoked await on the result of query that is not a promise, which is a programming error. Try calling con.promise().query(), or require('mysql2/promise') instead of 'mysql2' for a promise-compatible version of the query interface. To learn how to use async/await or Promises check out documentation at https://sidorares.github.io/node-mysql2/docs#using-promise-wrapper, or the mysql2 documentation at https://sidorares.github.io/node-mysql2/docs/documentation/promise-wrapper"}
+{"level":"error","message":"You have tried to call .then(), .catch(), or invoked await on the result of query that is not a promise, which is a programming error. Try calling con.promise().query(), or require('mysql2/promise') instead of 'mysql2' for a promise-compatible version of the query interface. To learn how to use async/await or Promises check out documentation at https://sidorares.github.io/node-mysql2/docs#using-promise-wrapper, or the mysql2 documentation at https://sidorares.github.io/node-mysql2/docs/documentation/promise-wrapper"}
+{"level":"error","message":"You have tried to call .then(), .catch(), or invoked await on the result of query that is not a promise, which is a programming error. Try calling con.promise().query(), or require('mysql2/promise') instead of 'mysql2' for a promise-compatible version of the query interface. To learn how to use async/await or Promises check out documentation at https://sidorares.github.io/node-mysql2/docs#using-promise-wrapper, or the mysql2 documentation at https://sidorares.github.io/node-mysql2/docs/documentation/promise-wrapper"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"The first argument must be of type string or an instance of Buffer, ArrayBuffer, or Array or an Array-like Object. Received undefined"}
+{"level":"error","message":"The first argument must be of type string or an instance of Buffer, ArrayBuffer, or Array or an Array-like Object. Received undefined"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"Column count doesn't match value count at row 1"}
+{"level":"error","message":"Column count doesn't match value count at row 1"}
+{"level":"error","message":"Column count doesn't match value count at row 1"}
+{"level":"error","message":"Column count doesn't match value count at row 1"}
+{"level":"error","message":"Column count doesn't match value count at row 1"}
+{"level":"error","message":"Column count doesn't match value count at row 1"}
+{"level":"error","message":"Column count doesn't match value count at row 1"}
+{"level":"error","message":"Column count doesn't match value count at row 1"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"Column count doesn't match value count at row 1"}
+{"level":"error","message":"Duplicate entry 'MKJ00000830' for key 'videos.PRIMARY'"}
+{"level":"error","message":"Duplicate entry 'MKJ00000831' for key 'videos.PRIMARY'"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000832',\nNULL,\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
+{"level":"error","message":"Duplicate entry 'MKJ00000832' for key 'videos.PRIMARY'"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000833',\nNULL,\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
+{"level":"error","message":"Column 'new_title' cannot be null"}
+{"level":"error","message":"Column 'new_title' cannot be null"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000834',\nNULL,\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
+{"level":"error","message":"The first argument must be of type string or an instance of Buffer, ArrayBuffer, or Array or an Array-like Object. Received undefined"}
+{"level":"error","message":"The first argument must be of type string or an instance of Buffer, ArrayBuffer, or Array or an Array-like Object. Received undefined"}
+{"level":"error","message":"Duplicate entry 'MKJ00000829' for key 'videos.PRIMARY'"}
+{"level":"error","message":"Duplicate entry 'MKJ00000829' for key 'videos.PRIMARY'"}
+{"level":"error","message":"Duplicate entry 'MKJ00000829' for key 'videos.PRIMARY'"}
+{"level":"error","message":"Duplicate entry 'MKJ00000829' for key 'videos.PRIMARY'"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"read ETIMEDOUT"}
+{"level":"error","message":"read ETIMEDOUT"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"Duplicate entry 'MKJ00000836' for key 'videos.PRIMARY'"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`jaco_iv_db`.`videos`, CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`))"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`jaco_iv_db`.`videos`, CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`))"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`jaco_iv_db`.`videos`, CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`))"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`jaco_iv_db`.`videos`, CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`))"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`jaco_iv_db`.`videos`, CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`))"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`jaco_iv_db`.`videos`, CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`))"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`jaco_iv_db`.`videos`, CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`))"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`jaco_iv_db`.`videos`, CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`))"}
+{"level":"error","message":"Cannot add or update a child row: a foreign key constraint fails (`jaco_iv_db`.`videos`, CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`))"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?, updated_at = NOW() where video_id = ?' at line 1"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?, updated_at = NOW() where video_id = ?' at line 1"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* from video_speaker_mapping where video_id = 'MKJ00000047'' at line 1"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* from video_speaker_mapping where video_id = 'MKJ00000047'' at line 1"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000047',\nNULL,\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000047',\nNULL,\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000047',\n45,\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000047',\nNULL,\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000047',\n'5',\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000049',\n'51',\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
+{"level":"error","message":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'null,\n'MKJ00000049',\n'52',\nTRUE,\nFALSE,\nNOW(),\nNOW()' at line 1"}
+{"level":"error","message":"FUNCTION jaco_iv_db.ARRAY_AGG does not exist"}
+{"level":"error","message":"FUNCTION jaco_iv_db.ARRAY_AGG does not exist"}
+{"level":"error","message":"read ECONNRESET"}
+{"level":"error","message":"Unknown database 'michael_jaco_client_db_aws_lightsail'"}
+{"level":"error","message":"Unknown database 'michael_jaco_client_db_aws_lightsail'"}
+{"code":"ER_NO_SUCH_TABLE","errno":1146,"level":"error","sql":"INSERT INTO Discount SET `discount_code` = 'SUMMER2024', `discount_name` = 'Percentage', `discount_percentage` = 15, `usage_limit` = 100, `discount_description` = 'TEST', `status` = true, `start_date` = '2024-06-01T00:00:00', `end_date` = '2024-08-31T23:59:59'","sqlMessage":"Table 'jaco_iv_db.Discount' doesn't exist","sqlState":"42S02"}
+{"code":"ER_DUP_ENTRY","errno":1062,"level":"error","sql":"INSERT INTO users SET `name` = 'John Doe1', `email` = 'john1@example.com', `password` = 'mypassword'","sqlMessage":"Duplicate entry 'john1@example.com' for key 'users.email'","sqlState":"23000"}

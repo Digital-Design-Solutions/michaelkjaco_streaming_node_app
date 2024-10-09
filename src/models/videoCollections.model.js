@@ -11,18 +11,22 @@ class VideoCollections {
   }
 
   static AddCollection(newCollection, cb) {
-    db.query(addCategoryQuery, [newCollection.collection_name], (err, res) => {
-      if (err) {
-        logger.error(err.message);
-        cb(err, null);
-        return;
+    db.query(
+      addCollectionQuery,
+      [newCollection.collection_name],
+      (err, res) => {
+        if (err) {
+          logger.error(err.message);
+          cb(err, null);
+          return;
+        }
+        cb(null);
       }
-      cb(null);
-    });
+    );
   }
 
   static getAllCollections(cb) {
-    db.query(getAllCategoriesQuery, (err, res) => {
+    db.query(getAllCollectionsQuery, (err, res) => {
       if (err) {
         logger.error(err.message);
         cb(err, null);
